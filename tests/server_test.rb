@@ -17,4 +17,18 @@ class ServerTest < Minitest::Test
     response = get "/"
     assert response.ok?
   end
+
+  def test_can_get_list_name
+    response = get "/list/:name"
+    assert response.ok?, "not a 200 range response"
+    assert_equal true, response.body.include?("steve")
+  end
+
+  def test_can_get_list_incompletes_of_given_name
+    response = get "/list/steve"
+    assert_equal true, response.body.include?("steve")
+  end
+
+
+
 end

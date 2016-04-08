@@ -19,7 +19,7 @@ class ServerTest < Minitest::Test
   end
 
   def test_can_get_list_name
-    response = get "/list/steve"
+    response = get "/lists/steve"
     assert response.ok?, "not a 200 range response"
     assert_equal true, response.body.include?("steve")
   end
@@ -32,7 +32,7 @@ class ServerTest < Minitest::Test
 
   def test_can_create_new_list_via_post
     unique_name = SecureRandom.hex
-    response = post "/list/workouts", list: { name: unique_name, item: "lifts", description: "squats" }
+    response = post "/lists/workouts", list: { name: unique_name, item: "lifts", description: "squats" }
     assert response.redirect?
     assert_equal unique_name, List.last.name
   end

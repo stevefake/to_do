@@ -1,11 +1,11 @@
 class ListController < ::Base
-  get "/list/:name" do
-    erb :list
+  get "/lists/:name" do
+    erb :lists
   end
 
-  post "/list/:name" do
+  post "/lists/:name" do
     payload = params["list"]
     ::List.create(payload)
-    redirect to("/list/#{params['name']}")
+    redirect to("/lists/#{params['name']}")
   end
 end

@@ -1,6 +1,6 @@
 module Controller
 
-  class Item< ::Base
+  class Item < ::Base
 
     def initialize(todo_item)
       @todo_item = todo_item

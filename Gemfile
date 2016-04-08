@@ -10,6 +10,7 @@ group :test, :development do
   gem "minitest"
   gem "rack-test"
   gem "sqlite3"
+  gem "rubocop"
 end
 
 group :production do

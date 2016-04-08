@@ -11,6 +11,22 @@
     <aside class="names">
       <%= params["name"] %>
       <%= params["id"] %>
+      <%= params["item"] %>
+      <%= params["description"] %>
+    <form class="" action="/list/<%= params["name"] %>" method="post">
+      <fieldset>
+          <label for="list[name]">List Name</label>
+          <input type="text" name="list[name]" value="" required="">
+          <input type="text" name="list[id]" value="" required="">
+          <input type="text" name="list[item]" value="" required="">
+          <input type="text" name="list[description]" value="" required="">
+          <p class="input-invalid">
+            You must give your list item a name
+          </p>
+      </fieldset>
+      <button type="submit" name="button">Create Item</button>
+    </form>
+
     </aside>
   </body>
 </html>

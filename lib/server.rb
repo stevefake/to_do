@@ -17,6 +17,7 @@ class Server < Base
   # Each controller should be listed below
   use HomepageController
   use ListController
+  use ItemController
 end
 
 Server.run! if $PROGRAM_NAME == __FILE__

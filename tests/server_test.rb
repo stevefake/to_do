@@ -46,4 +46,29 @@ class ServerTest < Minitest::Test
     response = get "/list/steve"
     assert_equal "exercise", response.body.incompletes
   end
+
+  def test_has_an_item_route
+    response = get "/items/thing"
+    assert response.ok?
+  end
+
+  def test_can_update_item
+    skip
+    # PATCH /items/:id... adds or updates a due date
+  end
+
+  def test_can_delete_item
+    skip
+    # DELETE /items/:id marks an item as complete
+  end
+
+  def test_can_generate_random_incomplete
+    skip
+    # GET /next returns a random incomplete
+  end
+
+  def test_can_search_items
+    skip
+    # GET /search?q=... finds items containing the given string
+  end
 end
